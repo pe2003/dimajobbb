@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Голосование Поваров и Официантов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Форма регистрации -->
+        <div id="registration" class="form-section">
+            <h2>Регистрация</h2>
+            <select id="role">
+                <option value="">Выберите роль</option>
+                <option value="cook">Повар</option>
+                <option value="waiter">Официант</option>
+            </select>
+            <input type="text" id="surname" placeholder="Фамилия">
+            <input type="text" id="name" placeholder="Имя">
+            <button onclick="register()">Зарегистрироваться</button>
+        </div>
+
+        <!-- Форма голосования -->
+        <div id="voting" class="form-section" style="display: none;">
+            <h2>Голосование</h2>
+            <p>Вы: <span id="userInfo"></span></p>
+            
+            <h3>Голос для официанта</h3>
+            <select id="waiterList"></select>
+            <button onclick="vote('waiter', 'star')">★ Звезда</button>
+            <button onclick="vote('waiter', 'pig')">🐷 Свинья</button>
+
+            <h3>Голос для повара</h3>
+            <select id="cookList"></select>
+            <button onclick="vote('cook', 'star')">★ Звезда</button>
+            <button onclick="vote('cook', 'pig')">🐷 Свинья</button>
+        </div>
+
+        <!-- Результаты -->
+        <div id="results" class="form-section">
+            <h2>Результаты</h2>
+            <div id="resultsDisplay"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
